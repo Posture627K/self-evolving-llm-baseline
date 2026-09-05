@@ -14,12 +14,6 @@
 
 数值为三次重复的平均 normalized score。**T4 的差异主要体现在架构与流程契约，不能直接归因为抽象导致信息损失；T5 有天花板效应；T6 的小幅分差来自非功能契约。** 当前结果不能支持 Episodic 普遍优于 Procedural，也不构成统计稳定性或机制因果证据。详见[当前发现与局限](paired_repetition_findings.md)和[按构念拆分的结果](paired_repetition_summary.md)。
 
-老师审阅时希望讨论：
-
-1. 下一步是否优先增加独立 source / task family，检验 T4 差异是否具有可重复性？
-2. 功能迁移和 contract compliance 应如何分别作为主要指标与辅助指标？
-3. 是否应针对 T4 做受控的信息补回/删除实验，定位候选信息变化，而不是仅扩大总分比较？
-
 ## 阅读顺序
 
 1. [实验设计：上游 baseline 与新增同源比较](docs/experiment_design.md)
