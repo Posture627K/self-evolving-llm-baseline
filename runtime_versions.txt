@@ -1,0 +1,13 @@
+runtime_root=/home/posture627ka/workspaces/skillevolbench-baseline
+skill_evol_bench_commit=9e3daa339987c3cfa624121e1be442593a53d43c
+python_version=Python 3.12.3
+harbor_version=0.22.0
+docker_engine=29.7.2
+agent_runtime_image=sha256:61e7ea70528175dcab804af3f21955c692b8e2f3ca33338698e9cd87f17bbd93
+agent_runtime_size_bytes=636920514
+node_version=22.23.2
+claude_code_version=2.1.251
+gemini_cli_version=0.57.0
+codex_cli_version=0.151.0
+kimi_cli_version=1.49.0
+openclaw_version=2026.7.1-2

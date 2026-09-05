@@ -1,0 +1,42 @@
+{
+  "total_score": 100.0,
+  "max_score": 100.0,
+  "dimensions": [
+    {
+      "name": "outcome_public",
+      "weight": 25.0,
+      "tests_matched": 3,
+      "tests_passed": 3,
+      "scoring": "proportional",
+      "ratio": 1.0,
+      "score": 25.0
+    },
+    {
+      "name": "outcome_hidden",
+      "weight": 25.0,
+      "tests_matched": 4,
+      "tests_passed": 4,
+      "scoring": "proportional",
+      "ratio": 1.0,
+      "score": 25.0
+    },
+    {
+      "name": "process_public",
+      "weight": 25.0,
+      "tests_matched": 1,
+      "tests_passed": 1,
+      "scoring": "proportional",
+      "ratio": 1.0,
+      "score": 25.0
+    },
+    {
+      "name": "process_hidden",
+      "weight": 25.0,
+      "tests_matched": 2,
+      "tests_passed": 2,
+      "scoring": "proportional",
+      "ratio": 1.0,
+      "score": 25.0
+    }
+  ]
+}

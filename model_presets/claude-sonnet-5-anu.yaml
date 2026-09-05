@@ -1,0 +1,22 @@
+# Model preset: Claude Sonnet 5 through ANU strproxy.
+# The gateway is reachable only on the ANU network/VPN.
+
+name: claude-sonnet-5-anu
+short_id: sonnet-5-anu
+provider: anthropic
+harbor_agent_name: claude-code
+agent_model_name: claude-sonnet-5
+
+agent_env:
+  CLAUDE_CODE_USE_BEDROCK: "0"
+  ANTHROPIC_BASE_URL: https://strproxy.comp.anu.edu.au
+  ANTHROPIC_AUTH_TOKEN: "${ANTHROPIC_AUTH_TOKEN}"
+  ANTHROPIC_API_KEY: ""
+  ANTHROPIC_MODEL: claude-sonnet-5
+  ANTHROPIC_DEFAULT_SONNET_MODEL: claude-sonnet-5
+
+# Host-side SkillAuthor calls use the same model and ANU gateway.
+host_litellm:
+  model: anthropic/claude-sonnet-5
+  api_base_env: ANTHROPIC_BASE_URL
+  api_key_env: ANTHROPIC_AUTH_TOKEN

@@ -1,0 +1,75 @@
+{
+  "condition": "no_artifact",
+  "baseline": "no_skill",
+  "source_task_id": "E1-LS3-T1",
+  "target_task_id": "E1-LS3-T6",
+  "verifier_passed": false,
+  "normalized_score": 0.9375,
+  "reward": 0.9375,
+  "outcome_passed": true,
+  "process_passed": false,
+  "failed_tests": [
+    {
+      "name": "coverage_tooling_present",
+      "message": "coverage-driven workflow not evident",
+      "trace": "",
+      "group": "process"
+    }
+  ],
+  "rubric_dimensions": [
+    {
+      "name": "outcome_public",
+      "weight": 25.0,
+      "tests_matched": 3,
+      "tests_passed": 3,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    },
+    {
+      "name": "outcome_hidden",
+      "weight": 25.0,
+      "tests_matched": 3,
+      "tests_passed": 3,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    },
+    {
+      "name": "process_public",
+      "weight": 25.0,
+      "tests_matched": 1,
+      "tests_passed": 1,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    },
+    {
+      "name": "process_hidden",
+      "weight": 25.0,
+      "tests_matched": 4,
+      "tests_passed": 3,
+      "ratio": 0.75,
+      "score": 18.75,
+      "scoring": "proportional"
+    }
+  ],
+  "agent_input_tokens": 718675,
+  "agent_output_tokens": 10907,
+  "agent_cache_tokens": 700616,
+  "agent_cost_usd_estimate": 0.3213652,
+  "total_cost_usd_estimate": 0.321365,
+  "artifact": null,
+  "activation_audit": {
+    "instruction_path": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/no_artifact/runtime/E1-LS3-T6/instruction.md",
+    "delivery_mode": "matched_prompt",
+    "artifact_injected": false,
+    "artifact_sha256": null,
+    "native_skill_retrieval_disabled": true,
+    "native_skill_ids": []
+  },
+  "agent_completed_without_exception": true,
+  "trial_result": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/no_artifact/harbor-job/no_artifact/E1-LS3-T6__7NkQXzv/result.json",
+  "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/no_artifact",
+  "report": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/no_artifact/reports/full_report.json"
+}

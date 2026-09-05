@@ -1,0 +1,29 @@
+# Real credentials are local, including backup variants.
+.env
+.env.*
+*.env
+*.env.*
+!.harbor-agents.env.example
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+*credentials*.local*
+# Reconstructed upstream, environments, caches and new run outputs.
+/SkillEvolBench/
+/SkillEvolBench-wsl/
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.idea/
+.vscode/
+/workspace/
+/runtime/
+/latest_selected_source.json
+*.log
+*.db
+# Audited publication evidence is explicitly stored under results/ and artifacts/.

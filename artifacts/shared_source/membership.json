@@ -1,0 +1,47 @@
+[
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repA",
+    "episodic_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "procedural_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repB",
+    "episodic_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "procedural_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repC",
+    "episodic_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "procedural_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repA",
+    "episodic_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "procedural_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repB",
+    "episodic_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "procedural_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repC",
+    "episodic_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "procedural_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repA",
+    "episodic_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "procedural_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repB",
+    "episodic_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "procedural_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repC",
+    "episodic_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "procedural_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db"
+  }
+]

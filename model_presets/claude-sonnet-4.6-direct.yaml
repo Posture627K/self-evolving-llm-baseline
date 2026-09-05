@@ -1,0 +1,17 @@
+# Model preset: Claude Sonnet 4.6 via the direct Anthropic API.
+# Local overlay; the pinned SkillEvolBench checkout remains unchanged.
+
+name: claude-sonnet-4.6-direct
+short_id: sonnet-4-6-direct
+provider: anthropic
+harbor_agent_name: claude-code
+agent_model_name: claude-sonnet-4-6
+
+agent_env:
+  CLAUDE_CODE_USE_BEDROCK: "0"
+  ANTHROPIC_MODEL: claude-sonnet-4-6
+
+# Host-side SkillAuthor / Judge / retrieval calls use the same provider/model.
+host_litellm:
+  model: anthropic/claude-sonnet-4-6
+  api_key_env: ANTHROPIC_API_KEY

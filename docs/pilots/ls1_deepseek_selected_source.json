@@ -1,0 +1,22 @@
+{
+  "run_id": "acquire3__no_skill__deepseek-v4-flash__seedA__n1__20260902_035420",
+  "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/runs/acquire3__no_skill__deepseek-v4-flash__seedA__n1__20260902_035420",
+  "agent_failures": [],
+  "record_count": 1,
+  "source_valid": true,
+  "task_id": "E1-LS1-T1",
+  "normalized_score": 1.0,
+  "outcome_passed": true,
+  "process_passed": true,
+  "verifier_passed": true,
+  "cost_usd": 0.065914,
+  "reported_cost_usd": 1.2798599999999998,
+  "cost_source": "computed_from_tokens",
+  "cost_pricing_tier": "peak",
+  "trajectory_path": "${RUNTIME_ROOT}/SkillEvolBench/workspace/runs/acquire3__no_skill__deepseek-v4-flash__seedA__n1__20260902_035420/harbor-job/acquire3__no_skill__deepseek-v4-flash__seedA__n1__20260902_035420/E1-LS1-T1__4GhEqwi/agent/trajectory.json",
+  "failed_tests": [],
+  "record_path": "${RUNTIME_ROOT}/SkillEvolBench/workspace/runs/acquire3__no_skill__deepseek-v4-flash__seedA__n1__20260902_035420/stores/replay/records/E1-LS1-T1.json",
+  "status": "selected",
+  "attempt_number": 3,
+  "origin": "new"
+}

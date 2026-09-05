@@ -1,0 +1,574 @@
+diff --git a/skillevolbench/components/skill_author.py b/skillevolbench/components/skill_author.py
+index 95edf98..cab89f5 100644
+--- a/skillevolbench/components/skill_author.py
++++ b/skillevolbench/components/skill_author.py
+@@ -185,11 +185,41 @@ class LiteLLMClient:
+             kwargs["api_key"] = self.api_key
+         if self.json_mode:
+             kwargs["response_format"] = {"type": "json_object"}
++        normalized_model = self.model.rsplit("/", 1)[-1].lower()
++        is_deepseek_v4 = normalized_model.startswith("deepseek-v4-")
++        if self.json_mode and is_deepseek_v4:
++            # DeepSeek V4 defaults to high-effort thinking. For structured
++            # artifact authoring, reasoning can consume the completion budget
++            # and leave an empty content field. The official OpenAI-format
++            # control is sent through extra_body.
++            kwargs["extra_body"] = {"thinking": {"type": "disabled"}}
+         resp = litellm.completion(**kwargs)
+-        out = resp.choices[0].message.content
++        out = resp.choices[0].message.content or ""
+         self._accumulate_usage(resp)
+         # Dump records the full conversation for replay/audit.
+         self._dump((system_prompt or "") + "\n---\n" + prompt, out)
++        if self.json_mode and is_deepseek_v4 and not out.strip():
++            # DeepSeek documents occasional empty JSON-mode responses. Retry
++            # exactly once, preserving the first call's usage and dump.
++            retry_kwargs = dict(kwargs)
++            retry_kwargs["messages"] = [
++                *messages,
++                {
++                    "role": "user",
++                    "content": (
++                        "The previous response was empty. Return only the "
++                        "requested JSON object now."
++                    ),
++                },
++            ]
++            retry_resp = litellm.completion(**retry_kwargs)
++            out = retry_resp.choices[0].message.content or ""
++            self._accumulate_usage(retry_resp)
++            self._dump(
++                (system_prompt or "") + "\n---\n" + prompt +
++                "\n---\n[empty-response retry]",
++                out,
++            )
+         return out
+ 
+     async def acall(self, prompt: str, *, system_prompt: Optional[str] = None) -> str:
+@@ -1041,7 +1071,15 @@ class SkillAuthor:
+     ) -> SkillPatch:
+         from skillevolbench.stores.library_store import skill_id_to_slug
+         slug = skill_id_to_slug(latent_skill_id)
+-        data = _coerce_json(raw)
++        try:
++            data = _coerce_json(raw)
++        except PatchGenerationFailure:
++            # Induction always requests one SKILL.md upsert.  Some compatible
++            # Anthropic gateways preserve literal newlines and quotes inside
++            # that long string, making the surrounding JSON invalid even when
++            # the response is otherwise complete.  Recover only this narrow,
++            # complete single-upsert shape; truncated responses still fail.
++            data = _coerce_complete_single_upsert(raw)
+         upserts = data.get("upsert_files") or {}
+         if not upserts and data.get("skill_md"):
+             upserts = {f"{slug}/SKILL.md": str(data["skill_md"])}
+@@ -2011,19 +2049,97 @@ _JSON_OBJECT_RE = re.compile(r"\{.*\}", re.DOTALL)
+ 
+ 
+ def _coerce_json(raw: str) -> dict[str, Any]:
+-    """Parse LLM output as JSON, tolerating prefix/suffix prose."""
++    """Parse LLM output as JSON, tolerating common model formatting noise."""
+     raw = (raw or "").strip()
+     try:
+         return json.loads(raw)
+     except json.JSONDecodeError:
+         pass
++    # Some Anthropic-compatible gateways return otherwise valid JSON with a
++    # literal newline/tab inside a generated string.  Python's non-strict
++    # decoder accepts those control characters without changing the payload.
++    try:
++        return json.loads(raw, strict=False)
++    except json.JSONDecodeError:
++        pass
+     m = _JSON_OBJECT_RE.search(raw)
+     if not m:
+         raise PatchGenerationFailure("LLM output did not contain a JSON object")
+     try:
+         return json.loads(m.group(0))
+-    except json.JSONDecodeError as exc:
+-        raise PatchGenerationFailure(f"could not parse JSON: {exc}") from exc
++    except json.JSONDecodeError:
++        try:
++            return json.loads(m.group(0), strict=False)
++        except json.JSONDecodeError as exc:
++            raise PatchGenerationFailure(f"could not parse JSON: {exc}") from exc
++
++
++_COMPLETE_SINGLE_UPSERT_RE = re.compile(
++    r'"upsert_files"\s*:\s*\{\s*'
++    r'"(?P<path>[^"\r\n]+)"\s*:\s*"(?P<content>.*)"'
++    r'\s*\}\s*\}\s*(?:```)?\s*$',
++    re.DOTALL,
++)
++_SUMMARY_RE = re.compile(
++    r'"summary"\s*:\s*"(?P<summary>(?:\\.|[^"\\])*)"',
++    re.DOTALL,
++)
++
++
++def _decode_relaxed_json_string(value: str) -> str:
++    """Decode standard JSON escapes while preserving unescaped model text."""
++    escapes = {
++        '"': '"', '\\': '\\', '/': '/', 'b': '\b', 'f': '\f',
++        'n': '\n', 'r': '\r', 't': '\t',
++    }
++    out: list[str] = []
++    index = 0
++    while index < len(value):
++        char = value[index]
++        if char != "\\" or index + 1 >= len(value):
++            out.append(char)
++            index += 1
++            continue
++        marker = value[index + 1]
++        if marker == "u" and index + 5 < len(value):
++            digits = value[index + 2:index + 6]
++            try:
++                out.append(chr(int(digits, 16)))
++                index += 6
++                continue
++            except ValueError:
++                pass
++        if marker in escapes:
++            out.append(escapes[marker])
++            index += 2
++            continue
++        out.extend((char, marker))
++        index += 2
++    return "".join(out)
++
++
++def _coerce_complete_single_upsert(raw: str) -> dict[str, Any]:
++    """Recover a complete one-file induction patch with an unescaped body."""
++    raw = (raw or "").strip()
++    match = _COMPLETE_SINGLE_UPSERT_RE.search(raw)
++    if not match:
++        raise PatchGenerationFailure(
++            "LLM output was neither valid JSON nor a complete single upsert"
++        )
++    summary_match = _SUMMARY_RE.search(raw[:match.start()])
++    summary = (
++        _decode_relaxed_json_string(summary_match.group("summary"))
++        if summary_match else "Recovered complete single-file skill induction"
++    )
++    return {
++        "summary": summary,
++        "operation_type": "create",
++        "upsert_files": {
++            match.group("path"): _decode_relaxed_json_string(
++                match.group("content")
++            )
++        },
++    }
+ 
+ 
+ def _classify_failure(summary: str) -> Optional[str]:
+diff --git a/skillevolbench/components/verifier_adapter.py b/skillevolbench/components/verifier_adapter.py
+index 70ac4f7..81c09fa 100644
+--- a/skillevolbench/components/verifier_adapter.py
++++ b/skillevolbench/components/verifier_adapter.py
+@@ -109,7 +109,17 @@ class VerifierAdapter:
+         # populates this from trajectory.json:final_metrics for ATIF-aware
+         # agent CLIs -- claude-code, kimi-cli at minimum). When absent the
+         # fields stay 0 / "" and CostReport will say "unknown".
+-        n_input, n_output, n_cache, cost_usd, cost_source = (
++        (
++            n_input,
++            n_output,
++            n_cache,
++            cost_usd,
++            cost_source,
++            reported_cost_usd,
++            cost_model_name,
++            cost_pricing_tier,
++            cost_pricing_snapshot,
++        ) = (
+             self._parse_agent_cost(trial_result, model_name=task_id)
+         )
+ 
+@@ -130,13 +140,17 @@ class VerifierAdapter:
+             n_output_tokens=n_output,
+             n_cache_tokens=n_cache,
+             cost_usd=cost_usd,
++            reported_cost_usd=reported_cost_usd,
++            cost_model_name=cost_model_name,
++            cost_pricing_tier=cost_pricing_tier,
++            cost_pricing_snapshot=cost_pricing_snapshot,
+             cost_source=cost_source,
+         )
+ 
+     @staticmethod
+     def _parse_agent_cost(
+         trial_result: Any, *, model_name: str = "",
+-    ) -> tuple[int, int, int, float, str]:
++    ) -> tuple[int, int, int, float, str, float, str, str, str]:
+         """Pull token + cost from Harbor's TrialResult.
+ 
+         Harbor 0.6+ exposes the agent's token / cost telemetry on
+@@ -146,31 +160,27 @@ class VerifierAdapter:
+         had ``n_*_tokens=0`` / ``cost_usd=0.0`` regardless of what the
+         agent actually consumed.
+ 
+-        Returns (n_input, n_output, n_cache, cost_usd, cost_source).
++        Returns token counts, selected cost, source, agent-reported cost,
++        resolved model, pricing tier, and pricing snapshot.
+         Falls back to all-zero / "" when agent_result is absent or empty.
+-        Computes cost from tokens via the price table when the agent
+-        didn't self-report ``cost_usd``.
++        DeepSeek compatibility routes are always re-priced from tokens because
++        Claude Code otherwise reports Anthropic prices for a DeepSeek request.
+         """
+         if trial_result is None:
+-            return (0, 0, 0, 0.0, "")
++            return (0, 0, 0, 0.0, "", 0.0, "", "", "")
+         # Harbor 0.6+ canonical name; keep ``context`` as a back-compat
+         # alias so older Harbor releases / our test fixtures still work.
+         ctx = getattr(trial_result, "agent_result", None)
+         if ctx is None:
+             ctx = getattr(trial_result, "context", None)
+         if ctx is None:
+-            return (0, 0, 0, 0.0, "")
++            return (0, 0, 0, 0.0, "", 0.0, "", "", "")
+         n_input  = int(getattr(ctx, "n_input_tokens", 0) or 0)
+         n_output = int(getattr(ctx, "n_output_tokens", 0) or 0)
+         n_cache  = int(getattr(ctx, "n_cache_tokens", 0) or 0)
+-        reported = getattr(ctx, "cost_usd", None)
+-        if reported is not None and reported > 0:
+-            return (n_input, n_output, n_cache,
+-                    float(reported), "agent_reported")
++        reported_raw = getattr(ctx, "cost_usd", None)
++        reported = float(reported_raw) if reported_raw is not None else 0.0
+ 
+-        # Compute from tokens + price table.
+-        if n_input + n_output + n_cache == 0:
+-            return (0, 0, 0, 0.0, "")
+         # Resolve the agent's model from trial_result.config (Harbor
+         # passes this through). Fall back to model_name arg if absent.
+         agent_model = ""
+@@ -179,11 +189,55 @@ class VerifierAdapter:
+             agents = getattr(cfg, "agents", None) or []
+             if agents:
+                 agent_model = getattr(agents[0], "model_name", "") or ""
+-        from skillevolbench.metrics.cost import compute_cost_usd
++            if not agent_model:
++                agent = getattr(cfg, "agent", None)
++                if agent is not None:
++                    agent_model = getattr(agent, "model_name", "") or ""
++        agent_model = agent_model or model_name
++
++        from skillevolbench.metrics.cost import (
++            DEEPSEEK_PRICING_SNAPSHOT,
++            canonicalize_model_name,
++            compute_cost_usd,
++            pricing_tier_for_model,
++        )
++        canonical = canonicalize_model_name(agent_model)
++        pricing_tier = pricing_tier_for_model(agent_model)
++        pricing_snapshot = (
++            DEEPSEEK_PRICING_SNAPSHOT
++            if canonical and canonical.startswith("deepseek-")
++            else ""
++        )
++
++        if n_input + n_output + n_cache == 0:
++            if reported > 0:
++                return (
++                    0, 0, 0, reported, "agent_reported", reported,
++                    agent_model, pricing_tier, pricing_snapshot,
++                )
++            return (0, 0, 0, 0.0, "", 0.0, agent_model,
++                    pricing_tier, pricing_snapshot)
++
+         usd = compute_cost_usd(agent_model, n_input, n_output, n_cache)
++        if canonical and canonical.startswith("deepseek-") and usd is not None:
++            return (
++                n_input, n_output, n_cache, usd, "computed_from_tokens",
++                reported, agent_model, pricing_tier, pricing_snapshot,
++            )
++        if reported > 0:
++            return (
++                n_input, n_output, n_cache, reported, "agent_reported",
++                reported, agent_model, pricing_tier, pricing_snapshot,
++            )
+         if usd is None:
+-            return (n_input, n_output, n_cache, 0.0, "unknown")
+-        return (n_input, n_output, n_cache, usd, "computed_from_tokens")
++            return (
++                n_input, n_output, n_cache, 0.0, "unknown", reported,
++                agent_model, pricing_tier, pricing_snapshot,
++            )
++        return (
++            n_input, n_output, n_cache, usd, "computed_from_tokens", reported,
++            agent_model, pricing_tier, pricing_snapshot,
++        )
+ 
+     @staticmethod
+     def _read_reward(path: Path, trial_result: Any) -> float:
+@@ -350,51 +404,46 @@ class VerifierAdapter:
+         if log_dir.name != "verifier":
+             return None
+         trial_dir = log_dir.parent
+-        # Harbor 0.6+ archives JobConfig.artifacts paths to
+-        # ``<trial_dir>/artifacts/<basename>`` (verified empirically on a real
+-        # claude-opus-4.5 trial: trajectory.json sits at
+-        # ``<trial>/artifacts/trajectory.json``, NOT ``<trial>/agent/``).
+-        # Older Harbor versions used ``<trial_dir>/agent/`` instead. We probe
+-        # both, ``artifacts/`` first since it's the current convention.
+-        # Each agent CLI writes a different filename: ATIF-aware CLIs
+-        # (claude-code, kimi-cli) emit ``trajectory.json``; gemini-cli is
+-        # post-processed into ``gemini-cli.trajectory.{json,jsonl}`` by
+-        # ``agents_port/preinstalled.py``; codex/oracle write raw stdout.
+-        for agent_dir in (trial_dir / "artifacts", trial_dir / "agent"):
++        # Prefer the live agent directory, followed by Harbor's archived log
++        # layout. The artifacts root contains manifest.json and other metadata;
++        # accepting an arbitrary JSON file there previously made replay point
++        # at the manifest rather than the 24-step ATIF trajectory.
++        agent_dirs = (
++            trial_dir / "agent",
++            trial_dir / "artifacts" / "logs" / "agent",
++            trial_dir / "artifacts",
++        )
++        candidate_names = (
++            "trajectory.json",
++            "gemini-cli.trajectory.json",
++            "gemini-cli.trajectory.jsonl",
++            "openclaw-result.json",
++            "openclaw.txt",
++            "oracle.txt",
++            "claude-code.txt",
++            "kimi-cli.txt",
++            "codex.txt",
++            "gemini-cli.txt",
++        )
++        for candidate_name in candidate_names:
++            for agent_dir in agent_dirs:
++                candidate = agent_dir / candidate_name
++                if candidate.is_file():
++                    return candidate
++
++        # Future ATIF-aware agents may use a new prefix. Only trajectory-like
++        # files are accepted; a generic *.json fallback is intentionally
++        # forbidden because manifests are not agent experience.
++        for agent_dir in agent_dirs:
+             if not agent_dir.exists():
+                 continue
+-            candidates = [
+-                # 1. ATIF canonical
+-                agent_dir / "trajectory.json",
+-                # 2. gemini-cli (post-processed jsonl preferred since
+-                #    preinstalled.py's converter occasionally drops events)
+-                agent_dir / "gemini-cli.trajectory.json",
+-                agent_dir / "gemini-cli.trajectory.jsonl",
+-                # 3. openclaw
+-                agent_dir / "openclaw-result.json",
+-                agent_dir / "openclaw.txt",
+-                # 4. Per-CLI raw text logs (no ATIF: tee'd stdout).
+-                #    TrajectoryCompactor's plain-text branch handles these.
+-                agent_dir / "oracle.txt",
+-                agent_dir / "claude-code.txt",
+-                agent_dir / "kimi-cli.txt",
+-                agent_dir / "codex.txt",
+-                agent_dir / "gemini-cli.txt",
+-            ]
+-            for c in candidates:
+-                if c.exists():
+-                    return c
+-            # Glob fallbacks within this dir (ordered by compaction quality):
+-            for c in sorted(agent_dir.glob("*.trajectory.json*")):
+-                return c
+-            for c in sorted(agent_dir.glob("*.json")):
+-                return c
+-            for c in sorted(agent_dir.glob("*.txt")):
+-                return c
++            for candidate in sorted(agent_dir.glob("*.trajectory.json*")):
++                if candidate.is_file():
++                    return candidate
+ 
+         # Diagnostic: log what each candidate dir actually contains so the
+         # next failing trial leaves a breadcrumb in stdout.
+-        for d in (trial_dir / "artifacts", trial_dir / "agent"):
++        for d in agent_dirs:
+             if d.exists():
+                 _LOG.warning(
+                     "VerifierAdapter: no trajectory file found in %s; "
+diff --git a/skillevolbench/metrics/cost.py b/skillevolbench/metrics/cost.py
+index 7ce1592..5cc37a9 100644
+--- a/skillevolbench/metrics/cost.py
++++ b/skillevolbench/metrics/cost.py
+@@ -22,6 +22,7 @@ Bedrock / Anthropic / OpenAI give for cache-read tokens (10x cheaper).
+ from __future__ import annotations
+ 
+ from dataclasses import dataclass, field
++from datetime import datetime, timezone
+ from typing import Iterable, Optional
+ 
+ 
+@@ -66,6 +67,22 @@ MODEL_PRICING_USD_PER_MILLION: dict[str, dict[str, float]] = {
+     "gemini-2.5-pro":               {"input": 1.25,   "output": 10.0,   "cache": 0.125},
+ }
+ 
++# DeepSeek V4 uses UTC time-tiered pricing. Keep it separate from the static
++# table so a run is never silently priced with whichever tier happens to be
++# active when a report is read later. Snapshot: 2026-09-02, official docs.
++DEEPSEEK_PRICING_USD_PER_MILLION: dict[str, dict[str, dict[str, float]]] = {
++    "deepseek-v4-flash": {
++        "peak": {"input": 0.44, "output": 1.32, "cache": 0.014},
++        "off_peak": {"input": 0.22, "output": 0.66, "cache": 0.007},
++    },
++    "deepseek-v4-pro": {
++        "peak": {"input": 1.32, "output": 3.96, "cache": 0.044},
++        "off_peak": {"input": 0.66, "output": 1.98, "cache": 0.022},
++    },
++}
++
++DEEPSEEK_PRICING_SNAPSHOT = "official_2026-09-02"
++
+ # Aliases that don't fit the simple-strip rule.
+ MODEL_NAME_ALIASES: dict[str, str] = {
+     "moonshotai.kimi-k2.5":          "kimi-k2.5",
+@@ -92,6 +109,7 @@ def canonicalize_model_name(model_name: Optional[str]) -> Optional[str]:
+     normalized = model_name.strip().lower()
+     # Strip vendor prefix.
+     for prefix in ("openai/", "moonshot/", "moonshotai/", "google/",
++                   "deepseek/",
+                    "anthropic/", "gemini/", "bedrock/"):
+         if normalized.startswith(prefix):
+             normalized = normalized[len(prefix):]
+@@ -119,6 +137,10 @@ def canonicalize_model_name(model_name: Optional[str]) -> Optional[str]:
+     if normalized in MODEL_NAME_ALIASES:
+         return MODEL_NAME_ALIASES[normalized]
+ 
++    for priced in DEEPSEEK_PRICING_USD_PER_MILLION:
++        if normalized == priced or normalized.startswith(priced + "-"):
++            return priced
++
+     # Exact or prefix match against the priced table.
+     for priced in MODEL_PRICING_USD_PER_MILLION:
+         if normalized == priced or normalized.startswith(priced + "-"):
+@@ -127,11 +149,43 @@ def canonicalize_model_name(model_name: Optional[str]) -> Optional[str]:
+     return None
+ 
+ 
++def deepseek_pricing_tier(at_time: Optional[datetime] = None) -> str:
++    """Return the official DeepSeek ``peak`` / ``off_peak`` UTC tier.
++
++    Peak hours are 01:00-04:00 and 06:00-10:00 UTC, Monday-Friday. Naive
++    datetimes are treated as UTC so tests and historical repair tools remain
++    deterministic.
++    """
++    instant = at_time or datetime.now(timezone.utc)
++    if instant.tzinfo is None:
++        instant = instant.replace(tzinfo=timezone.utc)
++    instant = instant.astimezone(timezone.utc)
++    hour = instant.hour
++    is_weekday = instant.weekday() < 5
++    is_peak_hour = (1 <= hour < 4) or (6 <= hour < 10)
++    return "peak" if is_weekday and is_peak_hour else "off_peak"
++
++
++def pricing_tier_for_model(
++    model_name: Optional[str], at_time: Optional[datetime] = None,
++) -> str:
++    """Return the pricing tier used for an auditable cost estimate."""
++    canonical = canonicalize_model_name(model_name)
++    if canonical in DEEPSEEK_PRICING_USD_PER_MILLION:
++        return deepseek_pricing_tier(at_time)
++    if canonical in MODEL_PRICING_USD_PER_MILLION:
++        return "static"
++    return "unknown"
++
++
+ def compute_cost_usd(
+     model_name: Optional[str],
+     input_tokens: int,
+     output_tokens: int,
+     cache_tokens: int = 0,
++    *,
++    at_time: Optional[datetime] = None,
++    input_includes_cache: bool = True,
+ ) -> Optional[float]:
+     """Look up pricing for ``model_name`` and return USD cost (or None).
+ 
+@@ -141,11 +195,22 @@ def compute_cost_usd(
+     canonical = canonicalize_model_name(model_name)
+     if canonical is None:
+         return None
+-    pricing = MODEL_PRICING_USD_PER_MILLION.get(canonical)
++    if canonical in DEEPSEEK_PRICING_USD_PER_MILLION:
++        tier = deepseek_pricing_tier(at_time)
++        pricing = DEEPSEEK_PRICING_USD_PER_MILLION[canonical][tier]
++    else:
++        pricing = MODEL_PRICING_USD_PER_MILLION.get(canonical)
+     if pricing is None:
+         return None
++
++    # ATIF and LiteLLM report prompt/input tokens as the total, with cache
++    # reads also exposed as a subset. Charge the cache-miss rate only for the
++    # non-cached remainder; adding input + cache would double-charge reads.
++    uncached_input_tokens = int(input_tokens)
++    if input_includes_cache:
++        uncached_input_tokens = max(uncached_input_tokens - int(cache_tokens), 0)
+     return round(
+-        (input_tokens * pricing["input"]
++        (uncached_input_tokens * pricing["input"]
+          + output_tokens * pricing["output"]
+          + cache_tokens * pricing["cache"]) / 1_000_000,
+         6,
+@@ -173,6 +238,7 @@ class CostReport:
+     agent_cache_tokens: int = 0
+     agent_cost_per_task_usd: float = 0.0
+     agent_cost_source_breakdown: dict[str, int] = field(default_factory=dict)
++    agent_reported_total_cost_usd: float = 0.0
+ 
+     # ----- Host-side actuals (from LiteLLMClient instances) -----
+     host_total_cost_usd: float = 0.0
+@@ -239,6 +305,9 @@ def compute_cost(
+             rep.agent_output_tokens += int(getattr(o, "n_output_tokens", 0) or 0)
+             rep.agent_cache_tokens  += int(getattr(o, "n_cache_tokens", 0) or 0)
+             rep.agent_total_cost_usd += float(getattr(o, "cost_usd", 0.0) or 0.0)
++            rep.agent_reported_total_cost_usd += float(
++                getattr(o, "reported_cost_usd", 0.0) or 0.0
++            )
+             src = getattr(o, "cost_source", "") or "unknown"
+             source_counts[src] = source_counts.get(src, 0) + 1
+         rep.agent_cost_source_breakdown = source_counts
+@@ -254,6 +323,7 @@ def compute_cost(
+             n_cache = int(getattr(c, "_n_cache_tokens", 0) or 0)
+             usd = compute_cost_usd(
+                 getattr(c, "model", None), n_in, n_out, n_cache,
++                input_includes_cache=False,
+             ) or 0.0
+             rep.host_input_tokens  += n_in
+             rep.host_output_tokens += n_out
+@@ -291,5 +361,9 @@ __all__ = [
+     "compute_cost",
+     "compute_cost_usd",
+     "canonicalize_model_name",
++    "deepseek_pricing_tier",
++    "pricing_tier_for_model",
+     "MODEL_PRICING_USD_PER_MILLION",
++    "DEEPSEEK_PRICING_USD_PER_MILLION",
++    "DEEPSEEK_PRICING_SNAPSHOT",
+ ]
+diff --git a/skillevolbench/schemas/replay.py b/skillevolbench/schemas/replay.py
+index 857d953..a889be4 100644
+--- a/skillevolbench/schemas/replay.py
++++ b/skillevolbench/schemas/replay.py
+@@ -81,9 +81,16 @@ class TrialOutcome(BaseModel):
+     n_output_tokens: int = 0
+     n_cache_tokens: int = 0
+     cost_usd: float = 0.0
++    # Preserve the agent CLI's own estimate for audit. Compatibility routes
++    # can report the harness provider's price rather than the actual provider
++    # price, so this value must not automatically become the headline cost.
++    reported_cost_usd: float = 0.0
++    cost_model_name: str = ""
++    cost_pricing_tier: str = ""
++    cost_pricing_snapshot: str = ""
+     # Where did cost_usd come from?
+     #   "agent_reported"        -- final_metrics.total_cost_usd was non-None
+-    #   "computed_from_tokens"  -- we derived it via the price table
++    #   "computed_from_tokens"  -- derived from tokens + provider price table
+     #   "unknown"               -- model not in price table AND no agent-reported cost
+     #   ""                      -- no token info at all (e.g. trial_result is None)
+     cost_source: str = ""

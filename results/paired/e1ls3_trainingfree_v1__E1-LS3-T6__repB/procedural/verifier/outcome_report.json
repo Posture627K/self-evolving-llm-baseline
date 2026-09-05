@@ -1,0 +1,154 @@
+{
+  "task_id": "E1-LS3-T6",
+  "public": {
+    "section": "public",
+    "results": [
+      {
+        "name": "basic_mean",
+        "passed": true,
+        "detail": true,
+        "error": null
+      },
+      {
+        "name": "basic_median",
+        "passed": true,
+        "detail": true,
+        "error": null
+      },
+      {
+        "name": "schema_complete_for_normal_input",
+        "passed": true,
+        "detail": {
+          "count": 5,
+          "mean": 3.0,
+          "median": 3.0,
+          "stddev": 1.4142135623730951,
+          "q1": 2.0,
+          "q3": 4.0,
+          "outliers": [],
+          "spread": 4.0,
+          "negative_ratio": 0.0,
+          "zero_ratio": 0.0,
+          "report": "stable",
+          "zero_count": 0,
+          "value_buckets": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 5
+          },
+          "percentile_window": {
+            "lower": -1.0,
+            "upper": 7.0,
+            "iqr": 2.0
+          },
+          "has_zero_crossing": false,
+          "error": null
+        },
+        "error": null
+      }
+    ],
+    "passed": 3,
+    "total": 3
+  },
+  "hidden": {
+    "section": "hidden",
+    "results": [
+      {
+        "name": "empty_input_schema",
+        "passed": true,
+        "detail": {
+          "count": 0,
+          "mean": 0.0,
+          "median": 0.0,
+          "stddev": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "outliers": [],
+          "spread": 0.0,
+          "negative_ratio": 0.0,
+          "zero_ratio": 0.0,
+          "report": "empty_input",
+          "zero_count": 0,
+          "value_buckets": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 0
+          },
+          "percentile_window": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "iqr": 0.0
+          },
+          "has_zero_crossing": false,
+          "error": "input list is empty"
+        },
+        "error": null
+      },
+      {
+        "name": "all_equal_values",
+        "passed": true,
+        "detail": {
+          "count": 3,
+          "mean": 5.0,
+          "median": 5.0,
+          "stddev": 0.0,
+          "q1": 5.0,
+          "q3": 5.0,
+          "outliers": [],
+          "spread": 0.0,
+          "negative_ratio": 0.0,
+          "zero_ratio": 0.0,
+          "report": "stable",
+          "zero_count": 0,
+          "value_buckets": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 3
+          },
+          "percentile_window": {
+            "lower": 5.0,
+            "upper": 5.0,
+            "iqr": 0.0
+          },
+          "has_zero_crossing": false,
+          "error": null
+        },
+        "error": null
+      },
+      {
+        "name": "single_element_no_outliers",
+        "passed": true,
+        "detail": {
+          "count": 1,
+          "mean": 42.0,
+          "median": 42.0,
+          "stddev": 0.0,
+          "q1": 42.0,
+          "q3": 42.0,
+          "outliers": [],
+          "spread": 0.0,
+          "negative_ratio": 0.0,
+          "zero_ratio": 0.0,
+          "report": "stable",
+          "zero_count": 0,
+          "value_buckets": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 1
+          },
+          "percentile_window": {
+            "lower": 42.0,
+            "upper": 42.0,
+            "iqr": 0.0
+          },
+          "has_zero_crossing": false,
+          "error": null
+        },
+        "error": null
+      }
+    ],
+    "passed": 3,
+    "total": 3
+  },
+  "notes": []
+}

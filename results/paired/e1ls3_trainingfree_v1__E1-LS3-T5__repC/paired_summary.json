@@ -1,0 +1,238 @@
+{
+  "schema_version": "paired-mvp-2.0",
+  "generated_at": "2026-09-03T04:11:36.132901+00:00",
+  "source_run": "${RUNTIME_ROOT}/SkillEvolBench/workspace/runs/source__E1-LS3-T1__claude-sonnet5__20260903",
+  "source_task_id": "E1-LS3-T1",
+  "target_task_id": "E1-LS3-T5",
+  "family_id": "E1-LS3",
+  "n_source_experiences": 1,
+  "n_target_tasks": 1,
+  "delivery_mode": "matched_prompt",
+  "native_retrieval_disabled": true,
+  "results": [
+    {
+      "condition": "no_artifact",
+      "baseline": "no_skill",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "verifier_passed": true,
+      "normalized_score": 1.0,
+      "reward": 1.0,
+      "outcome_passed": true,
+      "process_passed": true,
+      "failed_tests": [],
+      "rubric_dimensions": [
+        {
+          "name": "outcome_public",
+          "weight": 25.0,
+          "tests_matched": 3,
+          "tests_passed": 3,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        },
+        {
+          "name": "outcome_hidden",
+          "weight": 25.0,
+          "tests_matched": 5,
+          "tests_passed": 5,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        },
+        {
+          "name": "process_public",
+          "weight": 25.0,
+          "tests_matched": 1,
+          "tests_passed": 1,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        },
+        {
+          "name": "process_hidden",
+          "weight": 25.0,
+          "tests_matched": 2,
+          "tests_passed": 2,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        }
+      ],
+      "agent_input_tokens": 273787,
+      "agent_output_tokens": 4955,
+      "agent_cache_tokens": 266679,
+      "agent_cost_usd_estimate": 0.1312898,
+      "total_cost_usd_estimate": 0.13129,
+      "artifact": null,
+      "activation_audit": {
+        "instruction_path": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/no_artifact/runtime/E1-LS3-T5/instruction.md",
+        "delivery_mode": "matched_prompt",
+        "artifact_injected": false,
+        "artifact_sha256": null,
+        "native_skill_retrieval_disabled": true,
+        "native_skill_ids": []
+      },
+      "agent_completed_without_exception": true,
+      "trial_result": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/no_artifact/harbor-job/no_artifact/E1-LS3-T5__fAKfvi5/result.json",
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/no_artifact",
+      "report": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/no_artifact/reports/full_report.json"
+    },
+    {
+      "condition": "episodic",
+      "baseline": "no_skill",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "verifier_passed": true,
+      "normalized_score": 1.0,
+      "reward": 1.0,
+      "outcome_passed": true,
+      "process_passed": true,
+      "failed_tests": [],
+      "rubric_dimensions": [
+        {
+          "name": "outcome_public",
+          "weight": 25.0,
+          "tests_matched": 3,
+          "tests_passed": 3,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        },
+        {
+          "name": "outcome_hidden",
+          "weight": 25.0,
+          "tests_matched": 5,
+          "tests_passed": 5,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        },
+        {
+          "name": "process_public",
+          "weight": 25.0,
+          "tests_matched": 1,
+          "tests_passed": 1,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        },
+        {
+          "name": "process_hidden",
+          "weight": 25.0,
+          "tests_matched": 2,
+          "tests_passed": 2,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        }
+      ],
+      "agent_input_tokens": 277029,
+      "agent_output_tokens": 5845,
+      "agent_cache_tokens": 269449,
+      "agent_cost_usd_estimate": 0.1426318,
+      "total_cost_usd_estimate": 0.142632,
+      "artifact": {
+        "representation": "normalized episodic event stream",
+        "canonical_payload": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/evidence/normalized_source_evidence.json",
+        "canonical_payload_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+        "semantic_event_selection": false,
+        "semantic_truncation": false
+      },
+      "activation_audit": {
+        "instruction_path": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/episodic/runtime/E1-LS3-T5/instruction.md",
+        "delivery_mode": "matched_prompt",
+        "artifact_injected": true,
+        "artifact_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+        "native_skill_retrieval_disabled": true,
+        "native_skill_ids": []
+      },
+      "agent_completed_without_exception": true,
+      "trial_result": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/episodic/harbor-job/episodic/E1-LS3-T5__XFrmYdN/result.json",
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/episodic",
+      "report": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/episodic/reports/full_report.json"
+    },
+    {
+      "condition": "procedural",
+      "baseline": "no_skill",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "verifier_passed": true,
+      "normalized_score": 1.0,
+      "reward": 1.0,
+      "outcome_passed": true,
+      "process_passed": true,
+      "failed_tests": [],
+      "rubric_dimensions": [
+        {
+          "name": "outcome_public",
+          "weight": 25.0,
+          "tests_matched": 3,
+          "tests_passed": 3,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        },
+        {
+          "name": "outcome_hidden",
+          "weight": 25.0,
+          "tests_matched": 5,
+          "tests_passed": 5,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        },
+        {
+          "name": "process_public",
+          "weight": 25.0,
+          "tests_matched": 1,
+          "tests_passed": 1,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        },
+        {
+          "name": "process_hidden",
+          "weight": 25.0,
+          "tests_matched": 2,
+          "tests_passed": 2,
+          "ratio": 1.0,
+          "score": 25.0,
+          "scoring": "proportional"
+        }
+      ],
+      "agent_input_tokens": 273959,
+      "agent_output_tokens": 4794,
+      "agent_cache_tokens": 266805,
+      "agent_cost_usd_estimate": 0.129889,
+      "total_cost_usd_estimate": 0.129889,
+      "artifact": {
+        "skill_id": "E1-LS3.safe-refactoring",
+        "commit_hash": "e91da5723852e39246a6052d260922cb07f69aa8",
+        "skill_md": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repA/evidence/procedural/SKILL.md",
+        "patch": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repA/evidence/procedural/skill_patch.json",
+        "authoring_manifest": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repA/evidence/procedural/authoring_manifest.json",
+        "representation": "procedural abstraction derived from canonical payload",
+        "canonical_payload_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212"
+      },
+      "activation_audit": {
+        "instruction_path": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/procedural/runtime/E1-LS3-T5/instruction.md",
+        "delivery_mode": "matched_prompt",
+        "artifact_injected": true,
+        "artifact_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db",
+        "native_skill_retrieval_disabled": true,
+        "native_skill_ids": []
+      },
+      "agent_completed_without_exception": true,
+      "trial_result": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/procedural/harbor-job/procedural/E1-LS3-T5__t5z7v3J/result.json",
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/procedural",
+      "report": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/procedural/reports/full_report.json"
+    }
+  ],
+  "score_deltas": {
+    "episodic_minus_no_artifact": 0.0,
+    "procedural_minus_no_artifact": 0.0,
+    "procedural_minus_episodic": 0.0
+  },
+  "interpretation_limit": "Single-source, single-target diagnostic MVP; not statistical evidence."
+}

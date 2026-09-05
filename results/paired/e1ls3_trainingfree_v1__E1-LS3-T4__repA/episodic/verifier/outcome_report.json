@@ -1,0 +1,106 @@
+{
+  "task_id": "E1-LS3-T4",
+  "public": {
+    "section": "public",
+    "results": [
+      {
+        "name": "json_identity",
+        "passed": true,
+        "detail": {
+          "status": "ok",
+          "result": [
+            {
+              "name": "alice",
+              "amount": 5.0,
+              "tags": [
+                "example_tagger"
+              ]
+            }
+          ]
+        },
+        "error": null
+      },
+      {
+        "name": "csv_uppercase",
+        "passed": true,
+        "detail": {
+          "status": "ok",
+          "result": [
+            {
+              "name": "ALICE",
+              "amount": 3.0,
+              "tags": [
+                "example_tagger"
+              ]
+            }
+          ]
+        },
+        "error": null
+      },
+      {
+        "name": "file_output",
+        "passed": true,
+        "detail": {
+          "path": "/tmp/tmph5f6krce/result.json"
+        },
+        "error": null
+      }
+    ],
+    "passed": 3,
+    "total": 3
+  },
+  "hidden": {
+    "section": "hidden",
+    "results": [
+      {
+        "name": "plugin_support_detected",
+        "passed": false,
+        "detail": null,
+        "error": "plugin support not implemented"
+      },
+      {
+        "name": "registered_plugin_executes",
+        "passed": true,
+        "detail": "register_plugin unavailable; load-based plugin behavior checked separately",
+        "error": null
+      },
+      {
+        "name": "broken_plugin_does_not_crash",
+        "passed": true,
+        "detail": {
+          "status": "ok",
+          "result": [
+            {
+              "name": "alice",
+              "amount": 5.0,
+              "tags": [
+                "example_tagger"
+              ]
+            }
+          ]
+        },
+        "error": null
+      },
+      {
+        "name": "xml_parse_available",
+        "passed": true,
+        "detail": {
+          "status": "ok",
+          "result": [
+            {
+              "name": "alice",
+              "amount": 5.0,
+              "tags": [
+                "example_tagger"
+              ]
+            }
+          ]
+        },
+        "error": null
+      }
+    ],
+    "passed": 3,
+    "total": 4
+  },
+  "notes": []
+}

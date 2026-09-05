@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/AIoT-MLSys-Lab/SkillEvolBench.git",
+  "commit": "9e3daa339987c3cfa624121e1be442593a53d43c",
+  "patch": "SkillEvolBench.local.patch",
+  "patch_sha256": "347cb8ef0202b872b33651f4518e0f565e1e9fd8f1f183b29f5db5375cad1301",
+  "modified_files": {
+    "skillevolbench/components/skill_author.py": "07b481505a8d74379b1bff160aebd7b0fe16085ade66cc74d038720d4d0ca43c",
+    "skillevolbench/components/verifier_adapter.py": "cdffbfdfba3407a83835c7cf247b2e037b326bcd8e38733da42a3e6703979ce3",
+    "skillevolbench/metrics/cost.py": "c0d5ec4f570f89302d86ce8099f8b8595ec1a6e7c437b5584d02d63d39afc679",
+    "skillevolbench/schemas/replay.py": "b9abec595e1a069e816aec5ce336eb04f86409a09af82a3ea507ee7e0a2a8da5"
+  },
+  "license_note": "No upstream LICENSE declaration found at this pinned revision. No new license is granted over upstream code."
+}

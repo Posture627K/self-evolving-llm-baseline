@@ -1,0 +1,1633 @@
+{
+  "schema_version": "paired-repetition-summary-1.0",
+  "generated_at": "2026-09-03T04:33:35.296663+00:00",
+  "experiment_prefix": "e1ls3_trainingfree_v1",
+  "design": {
+    "source_task_id": "E1-LS3-T1",
+    "targets": [
+      "E1-LS3-T4",
+      "E1-LS3-T5",
+      "E1-LS3-T6"
+    ],
+    "conditions": [
+      "no_artifact",
+      "episodic",
+      "procedural"
+    ],
+    "paired_repetitions": [
+      "A",
+      "B",
+      "C"
+    ],
+    "procedural_artifact": "one frozen abstraction reused across all target runs",
+    "randomness_note": "Claude exposes no controllable generation seed; A/B/C are paired repetitions with matched configuration, not identical sampling streams."
+  },
+  "n_branch_runs": 27,
+  "runs": [
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repA",
+      "repetition": "A",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T4",
+      "condition": "no_artifact",
+      "normalized_score": 0.4375,
+      "verifier_passed": false,
+      "outcome_passed": false,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 805633,
+      "agent_output_tokens": 25486,
+      "agent_cache_tokens": 772045,
+      "agent_cost_usd_estimate": 0.5435650000000001,
+      "total_cost_usd_estimate": 0.543565,
+      "failed_tests": [
+        "plugin_support_detected",
+        "module_split",
+        "global_state_reduced",
+        "plugin_registration_design"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 7,
+          "failed": 1,
+          "passed": 6,
+          "pass_rate": 0.8571428571428571
+        },
+        "contract": {
+          "total": 3,
+          "failed": 3,
+          "passed": 0,
+          "pass_rate": 0.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repA/branches/no_artifact"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repA",
+      "repetition": "A",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T4",
+      "condition": "episodic",
+      "normalized_score": 0.8125,
+      "verifier_passed": false,
+      "outcome_passed": false,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 663755,
+      "agent_output_tokens": 23715,
+      "agent_cache_tokens": 635296,
+      "agent_cost_usd_estimate": 0.4779971999999999,
+      "total_cost_usd_estimate": 0.477997,
+      "failed_tests": [
+        "plugin_support_detected",
+        "plugin_registration_design"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 7,
+          "failed": 1,
+          "passed": 6,
+          "pass_rate": 0.8571428571428571
+        },
+        "contract": {
+          "total": 3,
+          "failed": 1,
+          "passed": 2,
+          "pass_rate": 0.6666666666666666
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repA/branches/episodic"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repA",
+      "repetition": "A",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T4",
+      "condition": "procedural",
+      "normalized_score": 0.8125,
+      "verifier_passed": false,
+      "outcome_passed": false,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 872135,
+      "agent_output_tokens": 25645,
+      "agent_cache_tokens": 841138,
+      "agent_cost_usd_estimate": 0.5486056,
+      "total_cost_usd_estimate": 0.548606,
+      "failed_tests": [
+        "plugin_support_detected",
+        "plugin_registration_design"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 7,
+          "failed": 1,
+          "passed": 6,
+          "pass_rate": 0.8571428571428571
+        },
+        "contract": {
+          "total": 3,
+          "failed": 1,
+          "passed": 2,
+          "pass_rate": 0.6666666666666666
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repA/branches/procedural"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repB",
+      "repetition": "B",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T4",
+      "condition": "no_artifact",
+      "normalized_score": 0.375,
+      "verifier_passed": false,
+      "outcome_passed": false,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 1254456,
+      "agent_output_tokens": 27608,
+      "agent_cache_tokens": 1220282,
+      "agent_cost_usd_estimate": 0.6567484,
+      "total_cost_usd_estimate": 0.656748,
+      "failed_tests": [
+        "plugin_support_detected",
+        "registered_plugin_executes",
+        "module_split",
+        "global_state_reduced",
+        "plugin_registration_design"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 7,
+          "failed": 2,
+          "passed": 5,
+          "pass_rate": 0.7142857142857143
+        },
+        "contract": {
+          "total": 3,
+          "failed": 3,
+          "passed": 0,
+          "pass_rate": 0.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repB/branches/no_artifact"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repB",
+      "repetition": "B",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T4",
+      "condition": "episodic",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 999832,
+      "agent_output_tokens": 19057,
+      "agent_cache_tokens": 975041,
+      "agent_cost_usd_estimate": 0.4846662000000001,
+      "total_cost_usd_estimate": 0.484666,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 7,
+          "failed": 0,
+          "passed": 7,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repB/branches/episodic"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repB",
+      "repetition": "B",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T4",
+      "condition": "procedural",
+      "normalized_score": 0.4375,
+      "verifier_passed": false,
+      "outcome_passed": false,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 1218844,
+      "agent_output_tokens": 27275,
+      "agent_cache_tokens": 1186218,
+      "agent_cost_usd_estimate": 0.6404135999999999,
+      "total_cost_usd_estimate": 0.640414,
+      "failed_tests": [
+        "plugin_support_detected",
+        "module_split",
+        "global_state_reduced",
+        "plugin_registration_design"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 7,
+          "failed": 1,
+          "passed": 6,
+          "pass_rate": 0.8571428571428571
+        },
+        "contract": {
+          "total": 3,
+          "failed": 3,
+          "passed": 0,
+          "pass_rate": 0.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repB/branches/procedural"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repC",
+      "repetition": "C",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T4",
+      "condition": "no_artifact",
+      "normalized_score": 0.4375,
+      "verifier_passed": false,
+      "outcome_passed": false,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 836764,
+      "agent_output_tokens": 23621,
+      "agent_cache_tokens": 807464,
+      "agent_cost_usd_estimate": 0.5148428,
+      "total_cost_usd_estimate": 0.514843,
+      "failed_tests": [
+        "plugin_support_detected",
+        "module_split",
+        "global_state_reduced",
+        "plugin_registration_design"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 7,
+          "failed": 1,
+          "passed": 6,
+          "pass_rate": 0.8571428571428571
+        },
+        "contract": {
+          "total": 3,
+          "failed": 3,
+          "passed": 0,
+          "pass_rate": 0.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repC/branches/no_artifact"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repC",
+      "repetition": "C",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T4",
+      "condition": "episodic",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 705202,
+      "agent_output_tokens": 28634,
+      "agent_cache_tokens": 671916,
+      "agent_cost_usd_estimate": 0.5538192000000002,
+      "total_cost_usd_estimate": 0.553819,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 7,
+          "failed": 0,
+          "passed": 7,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repC/branches/episodic"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repC",
+      "repetition": "C",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T4",
+      "condition": "procedural",
+      "normalized_score": 0.4375,
+      "verifier_passed": false,
+      "outcome_passed": false,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 1381753,
+      "agent_output_tokens": 25425,
+      "agent_cache_tokens": 1350501,
+      "agent_cost_usd_estimate": 0.6492582000000002,
+      "total_cost_usd_estimate": 0.649258,
+      "failed_tests": [
+        "plugin_support_detected",
+        "module_split",
+        "global_state_reduced",
+        "plugin_registration_design"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 7,
+          "failed": 1,
+          "passed": 6,
+          "pass_rate": 0.8571428571428571
+        },
+        "contract": {
+          "total": 3,
+          "failed": 3,
+          "passed": 0,
+          "pass_rate": 0.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repC/branches/procedural"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repA",
+      "repetition": "A",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "condition": "no_artifact",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 313237,
+      "agent_output_tokens": 4033,
+      "agent_cache_tokens": 271729,
+      "agent_cost_usd_estimate": 0.26067579999999996,
+      "total_cost_usd_estimate": 0.260676,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 8,
+          "failed": 0,
+          "passed": 8,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repA/branches/no_artifact"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repA",
+      "repetition": "A",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "condition": "episodic",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 233733,
+      "agent_output_tokens": 4511,
+      "agent_cache_tokens": 229006,
+      "agent_cost_usd_estimate": 0.10979520000000001,
+      "total_cost_usd_estimate": 0.109795,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 8,
+          "failed": 0,
+          "passed": 8,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repA/branches/episodic"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repA",
+      "repetition": "A",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "condition": "procedural",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 234423,
+      "agent_output_tokens": 5013,
+      "agent_cache_tokens": 226803,
+      "agent_cost_usd_estimate": 0.1259466,
+      "total_cost_usd_estimate": 0.125947,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 8,
+          "failed": 0,
+          "passed": 8,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repA/branches/procedural"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repB",
+      "repetition": "B",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "condition": "no_artifact",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 310742,
+      "agent_output_tokens": 4217,
+      "agent_cache_tokens": 304048,
+      "agent_cost_usd_estimate": 0.12972360000000002,
+      "total_cost_usd_estimate": 0.129724,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 8,
+          "failed": 0,
+          "passed": 8,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repB/branches/no_artifact"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repB",
+      "repetition": "B",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "condition": "episodic",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 277123,
+      "agent_output_tokens": 5991,
+      "agent_cache_tokens": 268888,
+      "agent_cost_usd_estimate": 0.1465996,
+      "total_cost_usd_estimate": 0.1466,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 8,
+          "failed": 0,
+          "passed": 8,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repB/branches/episodic"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repB",
+      "repetition": "B",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "condition": "procedural",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 273178,
+      "agent_output_tokens": 4659,
+      "agent_cache_tokens": 266295,
+      "agent_cost_usd_estimate": 0.127353,
+      "total_cost_usd_estimate": 0.127353,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 8,
+          "failed": 0,
+          "passed": 8,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repB/branches/procedural"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repC",
+      "repetition": "C",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "condition": "no_artifact",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 273787,
+      "agent_output_tokens": 4955,
+      "agent_cache_tokens": 266679,
+      "agent_cost_usd_estimate": 0.1312898,
+      "total_cost_usd_estimate": 0.13129,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 8,
+          "failed": 0,
+          "passed": 8,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/no_artifact"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repC",
+      "repetition": "C",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "condition": "episodic",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 277029,
+      "agent_output_tokens": 5845,
+      "agent_cache_tokens": 269449,
+      "agent_cost_usd_estimate": 0.1426318,
+      "total_cost_usd_estimate": 0.142632,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 8,
+          "failed": 0,
+          "passed": 8,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/episodic"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repC",
+      "repetition": "C",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T5",
+      "condition": "procedural",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 273959,
+      "agent_output_tokens": 4794,
+      "agent_cache_tokens": 266805,
+      "agent_cost_usd_estimate": 0.129889,
+      "total_cost_usd_estimate": 0.129889,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 8,
+          "failed": 0,
+          "passed": 8,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 3,
+          "failed": 0,
+          "passed": 3,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repC/branches/procedural"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repA",
+      "repetition": "A",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T6",
+      "condition": "no_artifact",
+      "normalized_score": 0.9375,
+      "verifier_passed": false,
+      "outcome_passed": true,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 631587,
+      "agent_output_tokens": 10155,
+      "agent_cache_tokens": 610760,
+      "agent_cost_usd_estimate": 0.30695400000000006,
+      "total_cost_usd_estimate": 0.306954,
+      "failed_tests": [
+        "coverage_tooling_present"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 6,
+          "failed": 0,
+          "passed": 6,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 5,
+          "failed": 1,
+          "passed": 4,
+          "pass_rate": 0.8
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repA/branches/no_artifact"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repA",
+      "repetition": "A",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T6",
+      "condition": "episodic",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 435876,
+      "agent_output_tokens": 11527,
+      "agent_cache_tokens": 419038,
+      "agent_cost_usd_estimate": 0.2663896,
+      "total_cost_usd_estimate": 0.26639,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 6,
+          "failed": 0,
+          "passed": 6,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 5,
+          "failed": 0,
+          "passed": 5,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repA/branches/episodic"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repA",
+      "repetition": "A",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T6",
+      "condition": "procedural",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 437919,
+      "agent_output_tokens": 11507,
+      "agent_cache_tokens": 421722,
+      "agent_cost_usd_estimate": 0.2641624,
+      "total_cost_usd_estimate": 0.264162,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 6,
+          "failed": 0,
+          "passed": 6,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 5,
+          "failed": 0,
+          "passed": 5,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repA/branches/procedural"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repB",
+      "repetition": "B",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T6",
+      "condition": "no_artifact",
+      "normalized_score": 0.9375,
+      "verifier_passed": false,
+      "outcome_passed": true,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 474753,
+      "agent_output_tokens": 10295,
+      "agent_cache_tokens": 458676,
+      "agent_cost_usd_estimate": 0.25894920000000005,
+      "total_cost_usd_estimate": 0.258949,
+      "failed_tests": [
+        "coverage_tooling_present"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 6,
+          "failed": 0,
+          "passed": 6,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 5,
+          "failed": 1,
+          "passed": 4,
+          "pass_rate": 0.8
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repB/branches/no_artifact"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repB",
+      "repetition": "B",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T6",
+      "condition": "episodic",
+      "normalized_score": 0.9375,
+      "verifier_passed": false,
+      "outcome_passed": true,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 458278,
+      "agent_output_tokens": 8185,
+      "agent_cache_tokens": 445161,
+      "agent_cost_usd_estimate": 0.22330619999999995,
+      "total_cost_usd_estimate": 0.223306,
+      "failed_tests": [
+        "coverage_tooling_present"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 6,
+          "failed": 0,
+          "passed": 6,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 5,
+          "failed": 1,
+          "passed": 4,
+          "pass_rate": 0.8
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repB/branches/episodic"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repB",
+      "repetition": "B",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T6",
+      "condition": "procedural",
+      "normalized_score": 0.9375,
+      "verifier_passed": false,
+      "outcome_passed": true,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 441449,
+      "agent_output_tokens": 10116,
+      "agent_cache_tokens": 427101,
+      "agent_cost_usd_estimate": 0.2439322,
+      "total_cost_usd_estimate": 0.243932,
+      "failed_tests": [
+        "coverage_tooling_present"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 6,
+          "failed": 0,
+          "passed": 6,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 5,
+          "failed": 1,
+          "passed": 4,
+          "pass_rate": 0.8
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repB/branches/procedural"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repC",
+      "repetition": "C",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T6",
+      "condition": "no_artifact",
+      "normalized_score": 0.9375,
+      "verifier_passed": false,
+      "outcome_passed": true,
+      "process_passed": false,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 718675,
+      "agent_output_tokens": 10907,
+      "agent_cache_tokens": 700616,
+      "agent_cost_usd_estimate": 0.3213652,
+      "total_cost_usd_estimate": 0.321365,
+      "failed_tests": [
+        "coverage_tooling_present"
+      ],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 6,
+          "failed": 0,
+          "passed": 6,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 5,
+          "failed": 1,
+          "passed": 4,
+          "pass_rate": 0.8
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/no_artifact"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repC",
+      "repetition": "C",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T6",
+      "condition": "episodic",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 559992,
+      "agent_output_tokens": 7660,
+      "agent_cache_tokens": 546219,
+      "agent_cost_usd_estimate": 0.24088379999999995,
+      "total_cost_usd_estimate": 0.240884,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 6,
+          "failed": 0,
+          "passed": 6,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 5,
+          "failed": 0,
+          "passed": 5,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/episodic"
+    },
+    {
+      "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repC",
+      "repetition": "C",
+      "source_task_id": "E1-LS3-T1",
+      "target_task_id": "E1-LS3-T6",
+      "condition": "procedural",
+      "normalized_score": 1.0,
+      "verifier_passed": true,
+      "outcome_passed": true,
+      "process_passed": true,
+      "agent_completed_without_exception": true,
+      "agent_input_tokens": 394399,
+      "agent_output_tokens": 8807,
+      "agent_cache_tokens": 379840,
+      "agent_cost_usd_estimate": 0.222238,
+      "total_cost_usd_estimate": 0.222238,
+      "failed_tests": [],
+      "construct_results": {
+        "unmatched_failed_tests": [],
+        "functional": {
+          "total": 6,
+          "failed": 0,
+          "passed": 6,
+          "pass_rate": 1.0
+        },
+        "contract": {
+          "total": 5,
+          "failed": 0,
+          "passed": 5,
+          "pass_rate": 1.0
+        },
+        "form": {
+          "total": 0,
+          "failed": 0,
+          "passed": 0,
+          "pass_rate": null
+        }
+      },
+      "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/procedural"
+    }
+  ],
+  "aggregates": [
+    {
+      "target_task_id": "E1-LS3-T4",
+      "condition": "episodic",
+      "n": 3,
+      "mean": 0.9375,
+      "sample_sd": 0.10825317547305482,
+      "min": 0.8125,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "condition": "no_artifact",
+      "n": 3,
+      "mean": 0.4166666666666667,
+      "sample_sd": 0.03608439182435161,
+      "min": 0.375,
+      "max": 0.4375
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "condition": "procedural",
+      "n": 3,
+      "mean": 0.5625,
+      "sample_sd": 0.21650635094610965,
+      "min": 0.4375,
+      "max": 0.8125
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "condition": "episodic",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "condition": "no_artifact",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "condition": "procedural",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "condition": "episodic",
+      "n": 3,
+      "mean": 0.9791666666666666,
+      "sample_sd": 0.03608439182435161,
+      "min": 0.9375,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "condition": "no_artifact",
+      "n": 3,
+      "mean": 0.9375,
+      "sample_sd": 0.0,
+      "min": 0.9375,
+      "max": 0.9375
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "condition": "procedural",
+      "n": 3,
+      "mean": 0.9791666666666666,
+      "sample_sd": 0.03608439182435161,
+      "min": 0.9375,
+      "max": 1.0
+    }
+  ],
+  "matched_deltas": [
+    {
+      "target_task_id": "E1-LS3-T4",
+      "repetition": "A",
+      "episodic_minus_no_artifact": 0.375,
+      "procedural_minus_no_artifact": 0.375,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "repetition": "B",
+      "episodic_minus_no_artifact": 0.625,
+      "procedural_minus_no_artifact": 0.0625,
+      "procedural_minus_episodic": -0.5625
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "repetition": "C",
+      "episodic_minus_no_artifact": 0.5625,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": -0.5625
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "repetition": "A",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "repetition": "B",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "repetition": "C",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "repetition": "A",
+      "episodic_minus_no_artifact": 0.0625,
+      "procedural_minus_no_artifact": 0.0625,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "repetition": "B",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "repetition": "C",
+      "episodic_minus_no_artifact": 0.0625,
+      "procedural_minus_no_artifact": 0.0625,
+      "procedural_minus_episodic": 0.0
+    }
+  ],
+  "construct_aggregates": [
+    {
+      "target_task_id": "E1-LS3-T4",
+      "condition": "episodic",
+      "category": "contract",
+      "n": 3,
+      "mean": 0.8888888888888888,
+      "sample_sd": 0.1924500897298753,
+      "min": 0.6666666666666666,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "condition": "episodic",
+      "category": "functional",
+      "n": 3,
+      "mean": 0.9523809523809524,
+      "sample_sd": 0.08247860988423228,
+      "min": 0.8571428571428571,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "condition": "no_artifact",
+      "category": "contract",
+      "n": 3,
+      "mean": 0.0,
+      "sample_sd": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "condition": "no_artifact",
+      "category": "functional",
+      "n": 3,
+      "mean": 0.8095238095238094,
+      "sample_sd": 0.08247860988423221,
+      "min": 0.7142857142857143,
+      "max": 0.8571428571428571
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "condition": "procedural",
+      "category": "contract",
+      "n": 3,
+      "mean": 0.2222222222222222,
+      "sample_sd": 0.38490017945975047,
+      "min": 0.0,
+      "max": 0.6666666666666666
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "condition": "procedural",
+      "category": "functional",
+      "n": 3,
+      "mean": 0.8571428571428571,
+      "sample_sd": 0.0,
+      "min": 0.8571428571428571,
+      "max": 0.8571428571428571
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "condition": "episodic",
+      "category": "contract",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "condition": "episodic",
+      "category": "functional",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "condition": "no_artifact",
+      "category": "contract",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "condition": "no_artifact",
+      "category": "functional",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "condition": "procedural",
+      "category": "contract",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "condition": "procedural",
+      "category": "functional",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "condition": "episodic",
+      "category": "contract",
+      "n": 3,
+      "mean": 0.9333333333333332,
+      "sample_sd": 0.11547005383792512,
+      "min": 0.8,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "condition": "episodic",
+      "category": "functional",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "condition": "no_artifact",
+      "category": "contract",
+      "n": 3,
+      "mean": 0.8000000000000002,
+      "sample_sd": 0.0,
+      "min": 0.8,
+      "max": 0.8
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "condition": "no_artifact",
+      "category": "functional",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "condition": "procedural",
+      "category": "contract",
+      "n": 3,
+      "mean": 0.9333333333333332,
+      "sample_sd": 0.11547005383792512,
+      "min": 0.8,
+      "max": 1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "condition": "procedural",
+      "category": "functional",
+      "n": 3,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    }
+  ],
+  "construct_matched_deltas": [
+    {
+      "target_task_id": "E1-LS3-T4",
+      "repetition": "A",
+      "category": "contract",
+      "episodic_minus_no_artifact": 0.6666666666666666,
+      "procedural_minus_no_artifact": 0.6666666666666666,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "repetition": "A",
+      "category": "functional",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "repetition": "B",
+      "category": "contract",
+      "episodic_minus_no_artifact": 1.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": -1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "repetition": "B",
+      "category": "functional",
+      "episodic_minus_no_artifact": 0.2857142857142857,
+      "procedural_minus_no_artifact": 0.1428571428571428,
+      "procedural_minus_episodic": -0.1428571428571429
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "repetition": "C",
+      "category": "contract",
+      "episodic_minus_no_artifact": 1.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": -1.0
+    },
+    {
+      "target_task_id": "E1-LS3-T4",
+      "repetition": "C",
+      "category": "functional",
+      "episodic_minus_no_artifact": 0.1428571428571429,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": -0.1428571428571429
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "repetition": "A",
+      "category": "contract",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "repetition": "A",
+      "category": "functional",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "repetition": "B",
+      "category": "contract",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "repetition": "B",
+      "category": "functional",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "repetition": "C",
+      "category": "contract",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T5",
+      "repetition": "C",
+      "category": "functional",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "repetition": "A",
+      "category": "contract",
+      "episodic_minus_no_artifact": 0.19999999999999996,
+      "procedural_minus_no_artifact": 0.19999999999999996,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "repetition": "A",
+      "category": "functional",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "repetition": "B",
+      "category": "contract",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "repetition": "B",
+      "category": "functional",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "repetition": "C",
+      "category": "contract",
+      "episodic_minus_no_artifact": 0.19999999999999996,
+      "procedural_minus_no_artifact": 0.19999999999999996,
+      "procedural_minus_episodic": 0.0
+    },
+    {
+      "target_task_id": "E1-LS3-T6",
+      "repetition": "C",
+      "category": "functional",
+      "episodic_minus_no_artifact": 0.0,
+      "procedural_minus_no_artifact": 0.0,
+      "procedural_minus_episodic": 0.0
+    }
+  ],
+  "integrity": {
+    "agent_exception_runs": 0,
+    "unmatched_failed_tests": 0,
+    "branch_cost_usd_estimate": 8.722002,
+    "branch_cost_coverage": 27,
+    "cost_scope_note": "Target branch execution only; source acquisition and procedural authoring are excluded."
+  }
+}

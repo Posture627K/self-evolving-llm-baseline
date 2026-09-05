@@ -1,0 +1,76 @@
+{
+  "condition": "procedural",
+  "baseline": "no_skill",
+  "source_task_id": "E1-LS3-T1",
+  "target_task_id": "E1-LS3-T5",
+  "verifier_passed": true,
+  "normalized_score": 1.0,
+  "reward": 1.0,
+  "outcome_passed": true,
+  "process_passed": true,
+  "failed_tests": [],
+  "rubric_dimensions": [
+    {
+      "name": "outcome_public",
+      "weight": 25.0,
+      "tests_matched": 3,
+      "tests_passed": 3,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    },
+    {
+      "name": "outcome_hidden",
+      "weight": 25.0,
+      "tests_matched": 5,
+      "tests_passed": 5,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    },
+    {
+      "name": "process_public",
+      "weight": 25.0,
+      "tests_matched": 1,
+      "tests_passed": 1,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    },
+    {
+      "name": "process_hidden",
+      "weight": 25.0,
+      "tests_matched": 2,
+      "tests_passed": 2,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    }
+  ],
+  "agent_input_tokens": 234423,
+  "agent_output_tokens": 5013,
+  "agent_cache_tokens": 226803,
+  "agent_cost_usd_estimate": 0.1259466,
+  "total_cost_usd_estimate": 0.125947,
+  "artifact": {
+    "skill_id": "E1-LS3.safe-refactoring",
+    "commit_hash": "e91da5723852e39246a6052d260922cb07f69aa8",
+    "skill_md": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repA/evidence/procedural/SKILL.md",
+    "patch": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repA/evidence/procedural/skill_patch.json",
+    "authoring_manifest": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T4__repA/evidence/procedural/authoring_manifest.json",
+    "representation": "procedural abstraction derived from canonical payload",
+    "canonical_payload_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212"
+  },
+  "activation_audit": {
+    "instruction_path": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repA/branches/procedural/runtime/E1-LS3-T5/instruction.md",
+    "delivery_mode": "matched_prompt",
+    "artifact_injected": true,
+    "artifact_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db",
+    "native_skill_retrieval_disabled": true,
+    "native_skill_ids": []
+  },
+  "agent_completed_without_exception": true,
+  "trial_result": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repA/branches/procedural/harbor-job/procedural/E1-LS3-T5__tSBAJTU/result.json",
+  "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repA/branches/procedural",
+  "report": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T5__repA/branches/procedural/reports/full_report.json"
+}

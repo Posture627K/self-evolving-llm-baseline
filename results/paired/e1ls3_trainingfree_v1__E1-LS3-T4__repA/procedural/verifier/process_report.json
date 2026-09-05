@@ -1,0 +1,47 @@
+{
+  "task_id": "E1-LS3-T4",
+  "public": {
+    "section": "public",
+    "results": [
+      {
+        "name": "module_split",
+        "passed": true,
+        "detail": {
+          "python_files": [
+            "fake_sink_adapter.py",
+            "audit.py",
+            "parsing.py",
+            "transforms.py",
+            "plugin_loader.py",
+            "processor.py",
+            "outputs.py",
+            "plugin_registry.py"
+          ]
+        },
+        "error": null
+      }
+    ],
+    "passed": 1,
+    "total": 1
+  },
+  "hidden": {
+    "section": "hidden",
+    "results": [
+      {
+        "name": "global_state_reduced",
+        "passed": true,
+        "detail": "global state reduced",
+        "error": null
+      },
+      {
+        "name": "plugin_registration_design",
+        "passed": false,
+        "detail": null,
+        "error": "plugin registration design missing"
+      }
+    ],
+    "passed": 1,
+    "total": 2
+  },
+  "notes": []
+}

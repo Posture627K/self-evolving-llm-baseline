@@ -1,0 +1,110 @@
+{
+  "schema_version": "target-demand-card-1.1",
+  "task_id": "E1-LS3-T6",
+  "family_id": "E1-LS3",
+  "role": "composition",
+  "instruction_sha256": "39bb9d4daaf8300a41e315a01a2453bf850e72a643b0583c68d824adae2a3c16",
+  "fixed_before_procedural_authoring": true,
+  "demands": [
+    {
+      "target_demand_id": "D001",
+      "text": "refactor `analyze_data()` into smaller focused units",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D002",
+      "text": "split the implementation into at least four focused helper functions so validation, statistics, outlier detection, and report generation can be tested independently",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D003",
+      "text": "keep the current behavior working for the covered paths",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D004",
+      "text": "use coverage-driven checks after the refactor",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D005",
+      "text": "add at least eight new tests for the missing edge cases instead of only rewriting the implementation",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D006",
+      "text": "Returns a dictionary with keys `count`, `mean`, `median`, `stddev`, `q1`, `q3`, `outliers`, `spread`, `negative_ratio`, `report`, `zero_count`, and `error`.",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D007",
+      "text": "Numeric fields should be numbers; `outliers` should be a list; `report` should be a string classification.",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D008",
+      "text": "Empty input should return a controlled report with `count == 0`, `report == \"empty_input\"`, and an explanatory `error` instead of raising `ZeroDivisionError`.",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D009",
+      "text": "Single-element and all-equal inputs should report `stddev == 0` and no outliers.",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D010",
+      "text": "`/root/task/README.md`",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D011",
+      "text": "`/root/task/analyzer.py`",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D012",
+      "text": "`/root/task/public_tests/test_analyzer.py`",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D013",
+      "text": "`/root/task/notebooks/exploration.txt`",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D014",
+      "text": "`/root/task/docs/statistics-glossary.md`",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the analysis function and use coverage to close the gaps",
+      "explicit_requirement_section": false
+    }
+  ],
+  "resource_hints": [],
+  "scope_note": "Explicit behavioral bullets are separated from resource/path hints. Hidden verifier requirements require independent human review."
+}

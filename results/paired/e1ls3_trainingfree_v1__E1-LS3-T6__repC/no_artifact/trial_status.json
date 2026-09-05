@@ -1,0 +1,27 @@
+{
+  "exception_info": null,
+  "agent": {
+    "name": null,
+    "import_path": "agents_port.preinstalled:ClaudeCodePreinstalled",
+    "model_name": "claude-sonnet-5"
+  },
+  "agent_result": {
+    "n_input_tokens": 718675,
+    "n_cache_tokens": 700616,
+    "n_output_tokens": 10907,
+    "cost_usd": 0.3213652,
+    "rollout_details": null,
+    "metadata": null
+  },
+  "verifier_result": {
+    "rewards": {
+      "total_score": 93.75,
+      "max_score": 100.0,
+      "normalized_score": 0.9375,
+      "outcome_passed": 1.0,
+      "process_passed": 0.0
+    }
+  },
+  "started_at": "2026-09-03T04:24:44.421776Z",
+  "finished_at": "2026-09-03T04:27:03.583680Z"
+}

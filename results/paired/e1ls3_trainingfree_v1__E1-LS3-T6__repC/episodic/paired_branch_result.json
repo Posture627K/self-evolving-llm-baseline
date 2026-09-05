@@ -1,0 +1,74 @@
+{
+  "condition": "episodic",
+  "baseline": "no_skill",
+  "source_task_id": "E1-LS3-T1",
+  "target_task_id": "E1-LS3-T6",
+  "verifier_passed": true,
+  "normalized_score": 1.0,
+  "reward": 1.0,
+  "outcome_passed": true,
+  "process_passed": true,
+  "failed_tests": [],
+  "rubric_dimensions": [
+    {
+      "name": "outcome_public",
+      "weight": 25.0,
+      "tests_matched": 3,
+      "tests_passed": 3,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    },
+    {
+      "name": "outcome_hidden",
+      "weight": 25.0,
+      "tests_matched": 3,
+      "tests_passed": 3,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    },
+    {
+      "name": "process_public",
+      "weight": 25.0,
+      "tests_matched": 1,
+      "tests_passed": 1,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    },
+    {
+      "name": "process_hidden",
+      "weight": 25.0,
+      "tests_matched": 4,
+      "tests_passed": 4,
+      "ratio": 1.0,
+      "score": 25.0,
+      "scoring": "proportional"
+    }
+  ],
+  "agent_input_tokens": 559992,
+  "agent_output_tokens": 7660,
+  "agent_cache_tokens": 546219,
+  "agent_cost_usd_estimate": 0.24088379999999995,
+  "total_cost_usd_estimate": 0.240884,
+  "artifact": {
+    "representation": "normalized episodic event stream",
+    "canonical_payload": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/evidence/normalized_source_evidence.json",
+    "canonical_payload_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "semantic_event_selection": false,
+    "semantic_truncation": false
+  },
+  "activation_audit": {
+    "instruction_path": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/episodic/runtime/E1-LS3-T6/instruction.md",
+    "delivery_mode": "matched_prompt",
+    "artifact_injected": true,
+    "artifact_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+    "native_skill_retrieval_disabled": true,
+    "native_skill_ids": []
+  },
+  "agent_completed_without_exception": true,
+  "trial_result": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/episodic/harbor-job/episodic/E1-LS3-T6__NuaRRUx/result.json",
+  "run_dir": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/episodic",
+  "report": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repC/branches/episodic/reports/full_report.json"
+}

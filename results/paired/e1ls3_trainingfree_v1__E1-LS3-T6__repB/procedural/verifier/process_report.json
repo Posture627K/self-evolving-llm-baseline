@@ -1,0 +1,66 @@
+{
+  "task_id": "E1-LS3-T6",
+  "public": {
+    "section": "public",
+    "results": [
+      {
+        "name": "refactor_split",
+        "passed": true,
+        "detail": [
+          "_clean_values",
+          "_bucket_counts",
+          "_compute_statistics",
+          "_compute_quartiles",
+          "_detect_outliers",
+          "_classify_report",
+          "_empty_result",
+          "analyze_data"
+        ],
+        "error": null
+      }
+    ],
+    "passed": 1,
+    "total": 1
+  },
+  "hidden": {
+    "section": "hidden",
+    "results": [
+      {
+        "name": "tests_added",
+        "passed": true,
+        "detail": {
+          "test_count": 27
+        },
+        "error": null
+      },
+      {
+        "name": "coverage_tooling_present",
+        "passed": false,
+        "detail": null,
+        "error": "coverage-driven workflow not evident"
+      },
+      {
+        "name": "coverage_threshold_met",
+        "passed": true,
+        "detail": {
+          "percent_covered": 100.0
+        },
+        "error": null
+      },
+      {
+        "name": "edge_case_test_names_present",
+        "passed": true,
+        "detail": [
+          "empty",
+          "single",
+          "equal",
+          "negative"
+        ],
+        "error": null
+      }
+    ],
+    "passed": 3,
+    "total": 4
+  },
+  "notes": []
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "target-demand-card-1.1",
+  "task_id": "E1-LS3-T5",
+  "family_id": "E1-LS3",
+  "role": "adversarial",
+  "instruction_sha256": "872e0a744684cc861c421b395c1c74ffde1d9c2123a13b90081c99668232e82c",
+  "fixed_before_procedural_authoring": true,
+  "demands": [
+    {
+      "target_demand_id": "D001",
+      "text": "`parse`, `transform`, and `format_output` must keep their own boundary semantics",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the parse/transform/format chain without collapsing empty-input behavior",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D002",
+      "text": "`run_pipeline(None)` still needs to reflect the current chained behavior",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the parse/transform/format chain without collapsing empty-input behavior",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D003",
+      "text": "keep the CLI-facing behavior stable",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the parse/transform/format chain without collapsing empty-input behavior",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D004",
+      "text": "`/root/task/README.md`",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the parse/transform/format chain without collapsing empty-input behavior",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D005",
+      "text": "`/root/task/docs/serialization-notes.md`",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the parse/transform/format chain without collapsing empty-input behavior",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D006",
+      "text": "`/root/task/pipeline.py`",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the parse/transform/format chain without collapsing empty-input behavior",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D007",
+      "text": "`/root/task/legacy_formatter.py`",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the parse/transform/format chain without collapsing empty-input behavior",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D008",
+      "text": "`/root/task/cli_wrapper.py`",
+      "source": "target_instruction_bullet",
+      "source_section": "Refactor the parse/transform/format chain without collapsing empty-input behavior",
+      "explicit_requirement_section": false
+    }
+  ],
+  "resource_hints": [],
+  "scope_note": "Explicit behavioral bullets are separated from resource/path hints. Hidden verifier requirements require independent human review."
+}

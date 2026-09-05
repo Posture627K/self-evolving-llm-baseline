@@ -1,0 +1,12 @@
+{
+  "schema_version": "procedural-authoring-2.0",
+  "source_payload_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+  "source_payload_chars": 191002,
+  "source_payload_truncated": false,
+  "operator": "SkillEvolBench.SkillAuthor.induce_skill",
+  "induction_prompt_cap_removed_for_information_parity": true,
+  "structured_output": "json_object",
+  "deepseek_v4_thinking_for_json_author": "disabled",
+  "empty_response_retry_limit": 1,
+  "reused_archived_author_response_index": null
+}

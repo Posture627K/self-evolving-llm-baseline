@@ -1,0 +1,91 @@
+name: training-free-artifact-baseline
+upstream:
+  repository: https://github.com/AIoT-MLSys-Lab/SkillEvolBench.git
+  commit: 9e3daa339987c3cfa624121e1be442593a53d43c
+runtime:
+  platform: Ubuntu 24.04 on WSL2
+  root: ${BASELINE_RUNTIME_ROOT}
+  python: "3.12"
+  source_tree: ${BASELINE_RUNTIME_ROOT}/SkillEvolBench
+  harbor_repository: https://github.com/harbor-framework/harbor.git
+  harbor_commit: 389bd4f8ce796ef4a97de4b62675021e262c8e76
+  agent_runtime_build: baseline/build_agent_runtime_wsl.sh
+  openclaw_setup_mode: baseline
+  local_model_overlays:
+    - baseline/model_presets/claude-sonnet-4.6-direct.yaml
+    - baseline/model_presets/claude-sonnet-5-anu.yaml
+    - baseline/model_presets/deepseek-v4-flash.yaml
+  engineering_fixes:
+    sync_entrypoint: baseline/sync_runtime_fixes_wsl.sh
+    trajectory_resolution: reject artifact manifests and prefer Agent ATIF
+    deepseek_costing: token-derived, cache-aware, UTC peak/off-peak snapshot
+    replay_cost_audit: preserve agent-reported cost separately
+
+research_scope:
+  fixed:
+    - model preset
+    - agent harness
+    - benchmark task order
+    - model parameters
+  compared_conditions:
+    no_artifact: no_skill
+    episodic_representation: raw_trajectory_rag
+    procedural_representation: selfgen_experience_always
+  evaluation:
+    acquisition: T1-T3
+    frozen_deployment: T4-T6
+
+default_run:
+  model_preset: gpt-5.4
+  order_seed: A
+
+limitations:
+  - The three official conditions run acquisition independently.
+  - This baseline does not guarantee identical source trajectories across representations.
+  - The official reproduction alone cannot identify a representation effect.
+
+paired_mvp:
+  entrypoint: baseline/run_paired_mvp_wsl.sh
+  source_policy: one verified acquisition trajectory, resolved from the trial agent directory
+  canonical_evidence:
+    format: ordered evidence-unit JSON
+    removes_only:
+      - step identifiers
+      - timestamps
+      - model/accounting metadata
+    semantic_event_selection: false
+    semantic_truncation: false
+  conditions:
+    - no_artifact
+    - normalized_episodic
+    - procedural_abstraction
+  execution_baseline: no_skill
+  delivery: matched prompt wrapper with native retrieval disabled
+  execution_safety:
+    selectable_conditions: true
+    resumable_completed_branches: true
+    non_destructive_retry_directories: true
+    reject_harbor_agent_exceptions: true
+    optional_post_run_ledger: true
+    default_author_max_tokens: 4096
+  analysis_sidecar:
+    target_demand_card: separates behavioral demands from resource hints
+    abstraction_delta_ledger: reports grounded alignments and annotation coverage
+  interpretation_limit: one source, three targets, three matched repetitions per condition; diagnostic pilot
+
+source_acquisition:
+  entrypoint: baseline/run_acquisition_policy_wsl.sh
+  fixed: [model_preset, agent_harness, baseline, order_seed, task_limit]
+  selection: first attempt passing verifier, outcome, and process checks
+  default_max_attempts: 3
+  failed_attempts_retained: true
+
+published_snapshot:
+  current_experiment: e1ls3_trainingfree_v1
+  source_task: E1-LS3-T1
+  targets: [E1-LS3-T4, E1-LS3-T5, E1-LS3-T6]
+  completed_branches: 27
+  model_preset: claude-sonnet-5-anu
+  author_max_tokens: 8192
+  full_official_baseline_completion: not_demonstrated
+  offline_verification: python -B verify_snapshot.py

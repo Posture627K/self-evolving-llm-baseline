@@ -1,0 +1,24 @@
+# Model preset: DeepSeek V4 Flash through the official DeepSeek API.
+# Claude Code is the fixed in-container harness; host-side authoring uses
+# the same DeepSeek model through LiteLLM.
+
+name: deepseek-v4-flash
+short_id: deepseek-v4-flash
+provider: deepseek
+harbor_agent_name: claude-code
+agent_model_name: deepseek-v4-flash
+
+agent_env:
+  CLAUDE_CODE_USE_BEDROCK: "0"
+  ANTHROPIC_BASE_URL: https://api.deepseek.com/anthropic
+  ANTHROPIC_API_KEY: ""
+  ANTHROPIC_AUTH_TOKEN: "${DEEPSEEK_API_KEY}"
+  ANTHROPIC_MODEL: deepseek-v4-flash
+  ANTHROPIC_DEFAULT_OPUS_MODEL: deepseek-v4-flash
+  ANTHROPIC_DEFAULT_SONNET_MODEL: deepseek-v4-flash
+  ANTHROPIC_DEFAULT_HAIKU_MODEL: deepseek-v4-flash
+
+host_litellm:
+  model: deepseek/deepseek-v4-flash
+  api_base_env: DEEPSEEK_API_BASE
+  api_key_env: DEEPSEEK_API_KEY

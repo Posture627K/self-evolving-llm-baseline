@@ -1,0 +1,218 @@
+[
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repA",
+    "target_task_id": "E1-LS3-T4",
+    "repetition": "A",
+    "condition": "no_artifact",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repA/no_artifact/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repA/no_artifact/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repA",
+    "target_task_id": "E1-LS3-T4",
+    "repetition": "A",
+    "condition": "episodic",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repA/episodic/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repA/episodic/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repA",
+    "target_task_id": "E1-LS3-T4",
+    "repetition": "A",
+    "condition": "procedural",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repA/procedural/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repA/procedural/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repB",
+    "target_task_id": "E1-LS3-T4",
+    "repetition": "B",
+    "condition": "no_artifact",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repB/no_artifact/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repB/no_artifact/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repB",
+    "target_task_id": "E1-LS3-T4",
+    "repetition": "B",
+    "condition": "episodic",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repB/episodic/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repB/episodic/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repB",
+    "target_task_id": "E1-LS3-T4",
+    "repetition": "B",
+    "condition": "procedural",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repB/procedural/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repB/procedural/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repC",
+    "target_task_id": "E1-LS3-T4",
+    "repetition": "C",
+    "condition": "no_artifact",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repC/no_artifact/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repC/no_artifact/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repC",
+    "target_task_id": "E1-LS3-T4",
+    "repetition": "C",
+    "condition": "episodic",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repC/episodic/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repC/episodic/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T4__repC",
+    "target_task_id": "E1-LS3-T4",
+    "repetition": "C",
+    "condition": "procedural",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repC/procedural/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T4__repC/procedural/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repA",
+    "target_task_id": "E1-LS3-T5",
+    "repetition": "A",
+    "condition": "no_artifact",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repA/no_artifact/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repA/no_artifact/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repA",
+    "target_task_id": "E1-LS3-T5",
+    "repetition": "A",
+    "condition": "episodic",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repA/episodic/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repA/episodic/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repA",
+    "target_task_id": "E1-LS3-T5",
+    "repetition": "A",
+    "condition": "procedural",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repA/procedural/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repA/procedural/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repB",
+    "target_task_id": "E1-LS3-T5",
+    "repetition": "B",
+    "condition": "no_artifact",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repB/no_artifact/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repB/no_artifact/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repB",
+    "target_task_id": "E1-LS3-T5",
+    "repetition": "B",
+    "condition": "episodic",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repB/episodic/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repB/episodic/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repB",
+    "target_task_id": "E1-LS3-T5",
+    "repetition": "B",
+    "condition": "procedural",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repB/procedural/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repB/procedural/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repC",
+    "target_task_id": "E1-LS3-T5",
+    "repetition": "C",
+    "condition": "no_artifact",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repC/no_artifact/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repC/no_artifact/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repC",
+    "target_task_id": "E1-LS3-T5",
+    "repetition": "C",
+    "condition": "episodic",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repC/episodic/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repC/episodic/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T5__repC",
+    "target_task_id": "E1-LS3-T5",
+    "repetition": "C",
+    "condition": "procedural",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repC/procedural/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T5__repC/procedural/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repA",
+    "target_task_id": "E1-LS3-T6",
+    "repetition": "A",
+    "condition": "no_artifact",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repA/no_artifact/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repA/no_artifact/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repA",
+    "target_task_id": "E1-LS3-T6",
+    "repetition": "A",
+    "condition": "episodic",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repA/episodic/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repA/episodic/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repA",
+    "target_task_id": "E1-LS3-T6",
+    "repetition": "A",
+    "condition": "procedural",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repA/procedural/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repA/procedural/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repB",
+    "target_task_id": "E1-LS3-T6",
+    "repetition": "B",
+    "condition": "no_artifact",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repB/no_artifact/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repB/no_artifact/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repB",
+    "target_task_id": "E1-LS3-T6",
+    "repetition": "B",
+    "condition": "episodic",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repB/episodic/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repB/episodic/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repB",
+    "target_task_id": "E1-LS3-T6",
+    "repetition": "B",
+    "condition": "procedural",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repB/procedural/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repB/procedural/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repC",
+    "target_task_id": "E1-LS3-T6",
+    "repetition": "C",
+    "condition": "no_artifact",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repC/no_artifact/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repC/no_artifact/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repC",
+    "target_task_id": "E1-LS3-T6",
+    "repetition": "C",
+    "condition": "episodic",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repC/episodic/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repC/episodic/trial_status.json"
+  },
+  {
+    "mvp_id": "e1ls3_trainingfree_v1__E1-LS3-T6__repC",
+    "target_task_id": "E1-LS3-T6",
+    "repetition": "C",
+    "condition": "procedural",
+    "result": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repC/procedural/paired_branch_result.json",
+    "trial_status": "results/paired/e1ls3_trainingfree_v1__E1-LS3-T6__repC/procedural/trial_status.json"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "snapshot_date": "2026-09-05",
+  "experiment_prefix": "e1ls3_trainingfree_v1",
+  "source_task_id": "E1-LS3-T1",
+  "branch_count": 27,
+  "model_recorded_by_gateway": "claude-sonnet-5",
+  "harness": "Claude Code",
+  "shared_episodic_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+  "shared_procedural_sha256": "3ec9aac215e26599ae51eaf287daa073c6062e54ae453809fd4b1e92d9f998db",
+  "evidence_policy": "Shared normalized input and procedural skill retain original bytes; JSON metadata paths replace the original runtime root with ${RUNTIME_ROOT}.",
+  "exclusions": [
+    "populated credential files",
+    "virtual environments",
+    "IDE metadata",
+    "Git credential stores",
+    "complete runtime configs",
+    "agent session backups",
+    "unrelated course materials",
+    "duplicate upstream checkouts"
+  ],
+  "scope": "Official baseline infrastructure plus a 27-branch same-source pilot. Not a completed full official three-condition benchmark."
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": "target-demand-card-1.1",
+  "task_id": "E1-LS3-T4",
+  "family_id": "E1-LS3",
+  "role": "context-shift",
+  "instruction_sha256": "b9667ce5f8908ecaa757c6bd36bdc0754a2174c79915a16ae5338a55de2c05a6",
+  "fixed_before_procedural_authoring": true,
+  "demands": [
+    {
+      "target_demand_id": "D001",
+      "text": "keep the current processing behavior working",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D002",
+      "text": "keep JSON / CSV / XML flows intact",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D003",
+      "text": "split responsibilities instead of bolting plugin logic into one giant file",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D004",
+      "text": "broken plugins should not take down the whole processor",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D005",
+      "text": "Success returns `{ \"status\": \"ok\", \"result\": <transformed output> }`.",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D006",
+      "text": "Error handling returns `{ \"status\": \"error\", \"message\": <string> }`.",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D007",
+      "text": "For memory output, `result` is the transformed row list.",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D008",
+      "text": "For JSON/file/API outputs, `result` should preserve the existing project semantics for that destination.",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D009",
+      "text": "`/root/task/README.md`",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D010",
+      "text": "`/root/task/docs/ops-runbook.md`",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D011",
+      "text": "`/root/task/processor.py`",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D012",
+      "text": "`/root/task/sample_inputs/report.xml`",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    },
+    {
+      "target_demand_id": "D013",
+      "text": "`/root/task/plugins`",
+      "source": "target_instruction_bullet",
+      "source_section": "Add plugin support, but do it in a maintainable way",
+      "explicit_requirement_section": false
+    }
+  ],
+  "resource_hints": [],
+  "scope_note": "Explicit behavioral bullets are separated from resource/path hints. Hidden verifier requirements require independent human review."
+}

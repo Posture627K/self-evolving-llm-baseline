@@ -1,0 +1,36 @@
+{
+  "task_id": "E1-LS3-T4",
+  "public": {
+    "section": "public",
+    "results": [
+      {
+        "name": "module_split",
+        "passed": false,
+        "detail": null,
+        "error": "expected at least 4 focused modules, found 1"
+      }
+    ],
+    "passed": 0,
+    "total": 1
+  },
+  "hidden": {
+    "section": "hidden",
+    "results": [
+      {
+        "name": "global_state_reduced",
+        "passed": false,
+        "detail": null,
+        "error": "FileNotFoundError: [Errno 2] No such file or directory: '/tmp/harbor-eval-4_7s0d0d/workspace/task/project/processor.py'"
+      },
+      {
+        "name": "plugin_registration_design",
+        "passed": false,
+        "detail": null,
+        "error": "plugin registration design missing"
+      }
+    ],
+    "passed": 0,
+    "total": 2
+  },
+  "notes": []
+}

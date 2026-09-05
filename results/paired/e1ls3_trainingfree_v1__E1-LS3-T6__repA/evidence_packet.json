@@ -1,0 +1,25 @@
+{
+  "schema_version": "paired-mvp-2.0",
+  "source_run": "${RUNTIME_ROOT}/SkillEvolBench/workspace/runs/source__E1-LS3-T1__claude-sonnet5__20260903",
+  "source_task_id": "E1-LS3-T1",
+  "source_family_id": "E1-LS3",
+  "source_verifier_passed": true,
+  "source_normalized_score": 1.0,
+  "source_raw_trajectory_copy": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repA/evidence/source_trajectory.atif.json",
+  "canonical_payload": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repA/evidence/normalized_source_evidence.json",
+  "canonical_payload_sha256": "4472542ff181d0591d6ff5304fcac8c38a0e111aad0410d684e2dc84ece06212",
+  "canonical_payload_chars": 191002,
+  "canonical_event_count": 17,
+  "canonical_evidence_unit_count": 57,
+  "semantic_event_selection": false,
+  "semantic_truncation": false,
+  "target_task_id": "E1-LS3-T6",
+  "target_role": "composition",
+  "target_demand_card": "${RUNTIME_ROOT}/SkillEvolBench/workspace/paired_mvp/e1ls3_trainingfree_v1__E1-LS3-T6__repA/evidence/target_demand_card.json",
+  "delivery_mode": "matched_prompt",
+  "conditions": [
+    "no_artifact",
+    "episodic",
+    "procedural"
+  ]
+}

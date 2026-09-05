@@ -1,0 +1,36 @@
+{
+  "task_id": "E1-LS3-T5",
+  "public": {
+    "section": "public",
+    "results": [
+      {
+        "name": "pipeline_class_exists",
+        "passed": true,
+        "detail": "Pipeline class found",
+        "error": null
+      }
+    ],
+    "passed": 1,
+    "total": 1
+  },
+  "hidden": {
+    "section": "hidden",
+    "results": [
+      {
+        "name": "no_shortcut_none_handling",
+        "passed": true,
+        "detail": "no blanket falsy shortcut",
+        "error": null
+      },
+      {
+        "name": "stage_functions_preserved",
+        "passed": true,
+        "detail": "stage functions preserved",
+        "error": null
+      }
+    ],
+    "passed": 2,
+    "total": 2
+  },
+  "notes": []
+}
